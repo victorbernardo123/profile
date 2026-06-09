@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>Home - Victor Hugo</title>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #121214 !important;
+            color: #e2e8f0;
+        }
+        
+        /* Menu Premium Dark & Orange */
+        .custom-navbar {
+            background-color: rgba(18, 18, 20, 0.85) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .custom-navbar .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .custom-navbar .nav-link {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .custom-navbar .nav-link:hover, .custom-navbar .nav-link.active {
+            color: #ff6b00 !important;
+        }
+
+        /* Cards Gerais Modificados (Tema Dark) */
+        .custom-card {
+            background-color: #1a1a1e !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .custom-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Acordeões Customizados Dark */
+        .accordion-item {
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 20px !important;
+            overflow: hidden;
+            background-color: #1a1a1e;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .accordion-item:hover {
+            transform: translateY(-2px);
+        }
+        .accordion-button {
+            background-color: #1a1a1e !important;
+            color: #ffffff !important;
+            font-weight: 600;
+            padding: 1.25rem 1.5rem;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        .accordion-button:not(.collapsed) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            color: #ff6b00 !important;
+        }
+        .accordion-button::after {
+            filter: invert(1);
+        }
+        .accordion-body {
+            padding: 1.5rem;
+            color: #e2e8f0;
+            background-color: #1a1a1e;
+        }
+
+        /* Cores de Destaque */
+        .text-orange {
+            color: #ff6b00 !important;
+        }
+        .text-light-muted {
+            color: #94a3b8 !important;
+        }
+        .card-title-main { color: #ffffff; font-weight: 700; }
+        .section-title { color: #ffffff; font-weight: 700; letter-spacing: -0.5px; }
+        
+        /* Tags de Instituição Laranja */
+        .institution-tag {
+            color: #ff6b00;
+            background-color: rgba(255, 107, 0, 0.1);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+
+        /* Ícones */
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ff6b00;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Rodapé Fixo */
+        .custom-footer {
+            background-color: #0b0b0c !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .footer-link {
+            color: #94a3b8 !important;
+            display: inline-block;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #ff6b00 !important;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar sticky-top mb-5">
+            <div class="container">
+                <a class="navbar-brand" href="#">Victor Hugo</a>
+                <button type="button" class="navbar-toggler border-secondary" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="home.html" class="nav-link active fw-bold text-orange">Home</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">Portfólio</a></li>
+                        <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 flex-grow-1">
+        <div class="row g-4 justify-content-center"> 
+            
+            <section class="col-lg-4 col-md-10">
+                <div class="p-4 custom-card text-center h-100">
+                    <div class="position-relative d-inline-block mb-3">
+                        <img src="./imagens/Perfil.jpg" alt="Foto de Perfil de Victor Hugo" class="rounded-circle img-fluid border border-4 border-dark shadow-sm" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    <h3 class="mb-1 card-title-main">Victor Hugo</h3>
+                    <p class="text-orange small fw-semibold mb-4">Desenvolvedor Web Front-End</p>
+                    <hr class="opacity-25" style="color: #64748b;">
+                    
+                    <div class="text-start mt-4">
+                        <div class="mb-3 d-flex align-items-center">
+                            <div class="icon-circle me-3"><i class="bi bi-calendar-event fs-5"></i></div>
+                            <div>
+                                <small class="text-light-muted d-block" style="font-size: 0.75rem;">Idade</small>
+                                <span class="fw-semibold text-white" style="font-size: 0.95rem;">17 anos</span> 
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center">
+                            <div class="icon-circle me-3"><i class="bi bi-mortarboard fs-5"></i></div>
+                            <div>
+                                <small class="text-light-muted d-block" style="font-size: 0.75rem;">Escolaridade</small>
+                                <span class="fw-semibold text-white" style="font-size: 0.95rem;">Ensino Médio em Andamento</span>
+                            </div>
+                        </div>
+                        <div class="mb-0 d-flex align-items-center">
+                            <div class="icon-circle me-3"><i class="bi bi-geo-alt fs-5"></i></div>
+                            <div>
+                                <small class="text-light-muted d-block" style="font-size: 0.75rem;">Cidade</small>
+                                <span class="fw-semibold text-white" style="font-size: 0.95rem;">Botucatu - SP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="col-lg-8 col-md-10">
+                <div class="d-flex flex-column gap-4">
+                    
+                    <section class="accordion" id="accSobre">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collSobre" aria-expanded="true">
+                                    <i class="bi bi-person-fill me-2 text-orange"></i> <span><strong>Sobre mim</strong></span>
+                                </button>
+                            </h2>
+                            <div id="collSobre" data-bs-parent="#accSobre" class="accordion-collapse collapse show">
+                                <div class="accordion-body lh-lg text-white">
+                                    Tenho grande interesse na área de desenvolvimento web, com foco em front-end e constante aprendizado em back-end. Sou motivado por novos desafios and me adapto muito bem a tarefas orientadas por instruções claras e objetivas. Valorizo o trabalho em equipe pela oportunidade de colaborar e apoiar os colegas em suas dificuldades. Atualmente, busco aprimorar minha comunicação em público, algo que pretendo evoluir com o tempo e a prática.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="p-4 custom-card">
+                        <h4 class="mb-4 section-title border-bottom border-secondary pb-2"><i class="bi bi-briefcase-fill me-2 text-orange"></i> Minhas <span class="text-orange">Experiências</span></h4>
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                            <li class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-orange me-3 fs-5"></i>
+                                <div>
+                                    <strong class="text-white">Registro Empregatício</strong>
+                                    <p class="text-white small mb-0 opacity-75">Experiência profissional na Usina Açucareira de São Manuel.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-orange me-3 fs-5"></i>
+                                <div>
+                                    <strong class="text-white">Desenvolvimento Front-End</strong>
+                                    <p class="text-white small mb-0 opacity-75">Criação de interfaces modernas e responsivas utilizando semantic HTML5, CSS3 estruturado e o framework Bootstrap 5.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-orange me-3 fs-5"></i>
+                                <div>
+                                    <strong class="text-white">Lógica de Programação & Back-End</strong>
+                                    <p class="text-white small mb-0 opacity-75">Estudos voltados para resoluções de algoritmos, manipulação estrutural de dados e fundamentos de arquitetura Web.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-orange me-3 fs-5"></i>
+                                <div>
+                                    <strong class="text-white">Trabalho Coeso em Equipe</strong>
+                                    <p class="text-white small mb-0 opacity-75">Experiência prática de compartilhamento de códigos através de Git/GitHub em grupos focados no cumprimento de metas.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <div class="row g-4">
+                        
+                        <section class="col-md-6">
+                            <div class="accordion" id="accordionFormacoes">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseFormacoes" aria-expanded="true">
+                                            <i class="bi bi-mortarboard-fill me-2 text-orange"></i> <span><strong>Formações</strong></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFormacoes" data-bs-parent="#accordionFormacoes" class="accordion-collapse collapse show">
+                                        <div class="accordion-body lh-md">
+                                            <div class="mb-4">
+                                                <strong class="text-white d-block">Ensino Médio em Andamento</strong>
+                                                <span class="institution-tag">E.E Sophia Gabriel de Oliveira | 2026</span>
+                                                <p class="small text-white opacity-75 mb-0">Estou ainda no processo de conclusão do ano final do ensino médio, planejo concluir o terceiro ano e tentar uma possível vaga em uma faculdade.</p>
+                                            </div>
+                                            <div class="mb-0">
+                                                <strong class="text-white d-block">Cursos do SENAI</strong>
+                                                <span class="institution-tag">SENAI | 2026</span>
+                                                <p class="small text-white opacity-75 mb-0">Realizei diversos cursos distribuídos pelo SENAI, cursos sobre Inteligência Artificial, sobre manipulação de Excel.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="col-md-6">
+                            <div class="accordion" id="accordionHabilidades">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseHabilidades" aria-expanded="true">
+                                            <i class="bi bi-code-slash me-2 text-orange"></i> <span><strong>Habilidades Técnicas</strong></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseHabilidades" data-bs-parent="#accordionHabilidades" class="accordion-collapse collapse show">
+                                        <div class="accordion-body lh-base text-white">
+                                            <strong class="text-orange d-block mb-1">Linguagens e Marcação</strong>
+                                            <p class="mt-0 mb-3 small opacity-90">HTML5, CSS3, JavaScript (Lógica de Programação).</p>
+
+                                            <strong class="text-orange d-block mb-1">Frameworks e Ferramentas</strong>
+                                            <p class="mt-0 mb-3 small opacity-90">Bootstrap 5, Git e GitHub.</p>
+                                            
+                                            <strong class="text-orange d-block mb-1">Outras Competências</strong>
+                                            <p class="mt-0 mb-0 small opacity-90">Manipulação de Excel, Engenharia de Prompt IA e Metodologias Ágeis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div> 
+    </main> 
+
+    <footer class="custom-footer text-light text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-2 small text-light-muted">&copy; 2026 Victor Hugo. Todos os direitos reservados.</p>
+            <div class="d-flex justify-content-center gap-4 fs-5 mt-2">
+                <a href="#" target="_blank" class="footer-link"><i class="bi bi-linkedin"></i></a>
+                <a href="#" target="_blank" class="footer-link"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" target="_blank" class="footer-link"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
